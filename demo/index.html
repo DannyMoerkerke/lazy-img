@@ -10,14 +10,15 @@
         position: relative;
       }
 
-      lazy-img {
+      img {
         position: absolute;
         top: 1500px;
+        background: #cccccc;
       }
     </style>
   </head>
   <body>
-    <lazy-img width="480" height="320" src="https://edmullen.net/test/rc.jpg"></lazy-img>
+    <img is="lazy-img" width="480" height="320" data-src="https://edmullen.net/test/rc.jpg"></img>
     <script type="module" src="../src/lazy-img.js"></script>
 
   </body>
