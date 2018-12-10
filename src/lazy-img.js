@@ -1,4 +1,4 @@
-export default class LazyImg extends Image {
+export default class LazyImg extends HTMLElement {
 
   static get observedAttributes() {
     return ['threshold', 'delay', 'width', 'height'];

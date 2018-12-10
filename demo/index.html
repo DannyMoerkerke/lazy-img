@@ -8,17 +8,37 @@
       html, body {
         height: 400%;
         position: relative;
+        font-family: Verdana;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      .arrow {
+        font-size: 10em;
+        text-align: center;
       }
 
       lazy-img {
         position: absolute;
-        top: 1500px;
+        top: 1000px;
       }
     </style>
   </head>
   <body>
-    <lazy-img width="480" height="320" src="https://edmullen.net/test/rc.jpg"></lazy-img>
-    <script type="module" src="../src/lazy-img.js"></script>
+    <h1>lazy-img Custom Element</h1>
+    <p>
+      Scroll down to scroll the &lt;lazy-img&gt; element into view. By default it has a 500ms delay, so when scrolled
+      quickly into and out of the viewport it will not load the image immediately.
+    </p>
+    <p>
+      Only when it is fully visible for at least 500ms it will load the image
+    </p>
+    <p class="arrow">
+      <span>&darr;</span>
+    </p>
 
+    <lazy-img width="480" height="320" src="https://edmullen.net/test/rc.jpg"></lazy-img>
+
+    <script type="module" src="../src/lazy-img.js"></script>
   </body>
 </html>
