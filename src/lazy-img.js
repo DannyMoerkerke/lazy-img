@@ -58,11 +58,9 @@ export default class LazyImg extends HTMLImageElement {
           this.timer = null;
         }
       }
-      else {
-        if(intersectionRatio === 1) {
-          console.log('in view');
-          this.timer = setTimeout(this.loadImage.bind(this), this.delay);
-        }
+      else if(intersectionRatio === 1) {
+        console.log('in view');
+        this.timer = setTimeout(this.loadImage.bind(this), this.delay);
       }
     });
 
