@@ -159,11 +159,9 @@ export default class LazyImg extends Image {
           this.timer = null;
         }
       }
-      else {
-        if(intersectionRatio === 1) {
-          console.log('in view');
-          this.timer = setTimeout(this.loadImage.bind(this), this.delay);
-        }
+      else if(intersectionRatio === 1) {
+        console.log('in view');
+        this.timer = setTimeout(this.loadImage.bind(this), this.delay);
       }
     });
 
@@ -180,4 +178,4 @@ export default class LazyImg extends Image {
   }
 }
 
-customElements.define('lazy-img', LazyImg, {extends: 'img'});
+customElements.define('lazy-img', LazyImg);
