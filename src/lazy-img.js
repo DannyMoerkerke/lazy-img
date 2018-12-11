@@ -1,7 +1,7 @@
 export default class LazyImg extends HTMLImageElement {
 
   static get observedAttributes() {
-    return ['threshold', 'delay'];
+    return ['margin', 'delay'];
   }
 
   constructor() {
@@ -32,6 +32,11 @@ export default class LazyImg extends HTMLImageElement {
   attributeChangedCallback(attr, oldVal, newVal) {
     if(attr === 'delay' && newVal) {
       this.delay = parseInt(this.getAttribute('delay'), 10);
+    }
+
+    if(attr === 'margin' && newVal) {
+      this.options.rootMargin = newVal;
+      this.attachObserver();
     }
   }
 
