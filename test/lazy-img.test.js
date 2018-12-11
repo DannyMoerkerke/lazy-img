@@ -112,6 +112,17 @@ describe('lazy-img', () => {
     assert.equal(element.delay, 750);
   });
 
+  it('should set the "rootMargin" on the IntersectionObserver options and reattach it', () => {
+    const spy = sinon.spy(element, 'attachObserver');
+    const margin = '10px';
+    element.setAttribute('margin', margin);
+
+    assert.equal(element.options.rootMargin, margin);
+    assert.equal(element.attachObserver.called, true);
+
+    spy.restore();
+  });
+
   it('should remove the "src" attribute from the image to unload it', () => {
     element.image.setAttribute('src', 'foo.jpg');
 
