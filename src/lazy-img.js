@@ -31,7 +31,7 @@ export default class LazyImg extends HTMLImageElement {
 
   attributeChangedCallback(attr, oldVal, newVal) {
     if(attr === 'delay' && newVal) {
-      this.delay = parseInt(this.getAttribute('delay'), 10);
+      this.delay = parseInt(newVal, 10);
     }
 
     if(attr === 'margin' && newVal) {
@@ -72,6 +72,13 @@ export default class LazyImg extends HTMLImageElement {
   }
 
   loadImage() {
+    if(this.hasAttribute('data-srcset')) {
+      this.srcset = this.getAttribute('data-srcset');
+
+      if(this.hasAttribute('data-sizes')) {
+        this.sizes = this.getAttribute('data-sizes');
+      }
+    }
     if(this.hasAttribute('data-src')) {
       this.src = this.getAttribute('data-src');
     }

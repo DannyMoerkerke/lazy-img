@@ -74,6 +74,22 @@ describe('lazy-img', () => {
     assert.equal(element.getAttribute('src'), src);
   });
 
+  it('should set the "srcset" and "sizes" attributes on the image only when present on the element', () => {
+    const srcset = 'foo.jpg 100vw';
+    const sizes = '100vw';
+    element.loadImage();
+
+    assert.equal(element.getAttribute('srcset'), null);
+    assert.equal(element.getAttribute('sizes'), null);
+
+    element.setAttribute('data-srcset', srcset);
+    element.setAttribute('data-sizes', sizes);
+    element.loadImage();
+
+    assert.equal(element.getAttribute('srcset'), srcset);
+    assert.equal(element.getAttribute('sizes'), sizes);
+  });
+
 
   it('should set the loading delay when the "delay" attribute changes', () => {
     assert.equal(element.delay, 500);
