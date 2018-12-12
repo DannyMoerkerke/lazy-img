@@ -92,6 +92,22 @@ describe('lazy-img', () => {
     assert.equal(element.image.getAttribute('src'), src);
   });
 
+  it('should set the "srcset" and "sizes" attributes on the image only when present on the element', () => {
+    const srcset = 'foo.jpg 100vw';
+    const sizes = '100vw';
+    element.loadImage();
+
+    assert.equal(element.image.getAttribute('srcset'), null);
+    assert.equal(element.image.getAttribute('sizes'), null);
+
+    element.setAttribute('srcset', srcset);
+    element.setAttribute('sizes', sizes);
+    element.loadImage();
+
+    assert.equal(element.image.getAttribute('srcset'), srcset);
+    assert.equal(element.image.getAttribute('sizes'), sizes);
+  });
+
   it('should set dimensions on the image and container when the "width" and "height" attributes change' , () => {
     assert.equal(element.image.hasAttribute('width'), false);
     assert.equal(element.image.hasAttribute('height'), false);
@@ -121,13 +137,5 @@ describe('lazy-img', () => {
     assert.equal(element.attachObserver.called, true);
 
     spy.restore();
-  });
-
-  it('should remove the "src" attribute from the image to unload it', () => {
-    element.image.setAttribute('src', 'foo.jpg');
-
-    element.unloadImage();
-
-    assert.equal(element.image.hasAttribute('src'), false);
   });
 });

@@ -173,13 +173,16 @@ export default class LazyImg extends HTMLElement {
   }
 
   loadImage() {
+    if(this.hasAttribute('srcset')) {
+      this.image.srcset = this.getAttribute('srcset');
+
+      if(this.hasAttribute('sizes')) {
+        this.image.sizes = this.getAttribute('sizes');
+      }
+    }
     if(this.hasAttribute('src')) {
       this.image.src = this.getAttribute('src');
     }
-  }
-
-  unloadImage() {
-    this.image.removeAttribute('src');
   }
 }
 
