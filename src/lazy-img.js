@@ -57,14 +57,12 @@ export default class LazyImg extends HTMLImageElement {
   handleIntersection(entries) {
     entries.forEach(({intersectionRatio}) => {
       if(intersectionRatio === 0) {
-        console.log('out of view');
         if(this.timer) {
           clearTimeout(this.timer);
           this.timer = null;
         }
       }
       else if(intersectionRatio === 1) {
-        console.log('in view');
         this.timer = setTimeout(this.loadImage.bind(this), this.delay);
       }
     });
