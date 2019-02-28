@@ -1,7 +1,12 @@
 {
   "name": "lazy-img",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lazy loading image implemented as a Web Component",
+  "author": "Danny Moerkerke <danny@dannymoerkerke.nl>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:DannyMoerkerke/lazy-img.git"
+  },
   "main": "lazy-img.js",
   "directories": {
     "test": "test"
@@ -11,7 +16,6 @@
     "test": "ws -p 8080 --spa test/index.html",
     "test:headless": "concurrently \"npm test\" \"sleep 1 && mocha-headless-chrome -f http://localhost:8080/\""
   },
-  "author": "Danny Moerkerke <danny@dannymoerkerke.nl>",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
