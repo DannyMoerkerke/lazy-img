@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Lazy loading image implemented as a Web Component",
   "author": "Danny Moerkerke <danny@dannymoerkerke.nl>",
+  "homepage": "https://github.com/DannyMoerkerke/lazy-img",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:DannyMoerkerke/lazy-img.git"
