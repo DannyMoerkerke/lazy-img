@@ -1,5 +1,5 @@
 {
-  "name": "lazy-img",
+  "name": "@dannymoerkerke/lazy-img",
   "version": "1.0.0",
   "description": "Lazy loading image implemented as a Web Component",
   "author": "Danny Moerkerke <danny@dannymoerkerke.nl>",
@@ -7,6 +7,9 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:DannyMoerkerke/lazy-img.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "lazy-img.js",
   "directories": {
