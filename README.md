@@ -30,6 +30,8 @@ tests from your IDE using [Wallaby.js](https://wallabyjs.com/)
 
 To run the tests from the command line: `npm run test:headless`
 ### Usage
+Install with `npm install @dannymoerkerke/lazy-img`
+
 
 ```
 <lazy-img
