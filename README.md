@@ -52,7 +52,7 @@ only an `is` attribute:
      width="480"
      height="320"
      delay="500"
-     margin="0px"></lazy-img>
+     margin="0px"></img>
 ```
 Currently this is only supported in recent versions of Chrome and
 Firefox.
